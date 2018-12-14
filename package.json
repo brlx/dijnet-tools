@@ -1,0 +1,20 @@
+{
+  "name": "dijnet-tools",
+  "version": "1.0.0",
+  "description": "*WARNING*: this is just a sandbox, probably I won't make any progress at all, so don't expect useful content here. Also expect the scope to change as I go.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brlx/dijnet-tools.git"
+  },
+  "author": "brlx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brlx/dijnet-tools/issues"
+  },
+  "homepage": "https://github.com/brlx/dijnet-tools#readme"
+}
