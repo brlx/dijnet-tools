@@ -14,3 +14,15 @@ This downloads your bills from dijnet.
 * [-] find out where the session is coming back, and store it
 * [-] find out 
 
+## Usage
+
+### Credentials
+
+**dijnet-tools** expects your credentials as environment variables, the name should be `DIJNET_TOOLS_USER` for the username and `DIJNET_TOOLS_PASSWORD` for the password. If either of them is not found, **dijnet-tools** exits without doing anything.
+I personaly have the commands for setting them stored in my password manager, combined with the `HISTCONTROL=ignorespace` bash flag, so they won't be stored in the history.
+```bash
+export HISTCONTROL=ignorespace  # note that the rest of the commands begin with a space
+ export DIJNET_TOOLS_USER="yourusername"
+ export DIJNET_TOOLS_PASSWORD="yourpassword"
+```
+
