@@ -5,6 +5,12 @@ const DIJNET_URLS = {
     loginPath: '/ekonto/login/login_check_ajax',
 };
 
+exports.importCredentials = () => {
+    const user = process.env['DIJNET_TOOLS_USER'];
+    const password = process.env['DIJNET_TOOLS_PASSWORD'];
+    return { user, password };
+};
+
 exports.login = ({user, password}) => {
     return new Promise((resolve, reject) => {
         const request = https.request(

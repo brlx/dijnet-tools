@@ -1,24 +1,27 @@
 const dijnet = require('./lib');
 
-const CREDENTIALS = {
-    user: 'TODO',
-    password: 'TODO',
-};
+const TAG = 'dijnet-tools';
 
-console.log('dijnet-tools starting...');
+console.log('brlx/dijnet-tools starting...');
 
 // wrapping the whole thing into a func so that I can await inside it
 (async () => {
     try {
-        console.log('main: now awaiting login');
-        loginResponse = await dijnet.login(CREDENTIALS);
+        const credentials = dijnet.importCredentials();
+        if (!credentials.user || !credentials.password) {
+            console.log(TAG + ': missing credentials, see the README about how to provide them');
+            process.exit(1);
+        }
+
+        console.log(TAG + ': now awaiting login');
+        loginResponse = await dijnet.login(credentials);
         if (!loginResponse.success) {
-            console.error('main: unsuccessful login, cause:', loginResponse.error);
+            console.error(TAG + ': unsuccessful login, cause:', loginResponse.error);
             console.log(loginResponse);
-            process.exit();
+            process.exit(1);
         }
     } catch (e) {
-        console.error('main: unhandled error');
+        console.error(TAG + ': unhandled error');
         console.error(e);
     }
 })();
